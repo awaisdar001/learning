@@ -38,22 +38,25 @@ def categorize_questions():
         by_category[category].append({key: item[key] for key in filter_keys})
 
 
-#### Demo: l, p, pp
+# Bonus: b (Adds break point on the run.)
 # import pdb; pdb.set_trace()
-
-
 file_contents = load_file()
 categorize_questions()
+
+
+# Demo 1: l (list), p (print), pp (pretty print)
+# import pdb; pdb.set_trace()
 
 
 def get_input_from_user():
     """Gets an input from the user."""
     for idx, category in enumerate(by_category.keys()):
         print("{0}. {1}".format(idx, category))
-    return input("=> Select a category: ")
+    return input("=> Select a category: ") or 'ARCHITECTS'
 
 
 category = get_input_from_user()
 # Demo 3: s, r
+# import pdb; pdb.set_trace()
 question = get_question(category)
 print('Here is your question about "{0}": {1}'.format(category, question["question"]))
